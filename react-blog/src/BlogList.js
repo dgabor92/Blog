@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const BlogList = ({ blogs, title }) => {
   //we could add a function as props
   return (
@@ -5,8 +7,11 @@ const BlogList = ({ blogs, title }) => {
       <h2>{title}</h2>
       {blogs.map((blog) => (
         <div className="blog-preview" key={blog.id}>
-          <h2>{blog.title}</h2>
-          <p> Writen by {blog.author}</p>
+          <Link to={`/blogs/${blog.id}`}>
+            {/*use the link tag to go another page what created in App component Route path=/blogs/:id */}
+            <h2>{blog.title}</h2>
+            <p> Writen by {blog.author}</p>
+          </Link>
         </div>
       ))}
     </div>
