@@ -1,5 +1,7 @@
+//CUSTOM HOOK
 //custom hooks need to start with the word USE otherwise it wont work
 import { useState, useEffect } from 'react';
+
 const useFetch = (url) => {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true); //creating a loading message for the users if they have to wait for the data
